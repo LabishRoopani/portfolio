@@ -79,7 +79,12 @@ const DATA = {
         '/sdc-2.png',
         '/sdc-3.png',
         '/sdc-4.png',
-        '/sdc-5.png'
+        '/sdc-5.png',
+        '/sdc-6.png',
+        '/sdc-7.png',
+        '/sdc-8.png',
+        '/sdc-9.png',
+        '/sdc-10.png'
       ]
     },
     {
