@@ -19,14 +19,14 @@ const DATA = {
 
   experience: [
     {
-      role: 'Freelance Mobile App Developer',
+      role: 'Freelance Software Engineer',
       company: 'Independent',
       period: '2024 – Present',
-      description: 'Offering end-to-end mobile application development services for clients. Specializing in cross-platform apps using Flutter and Firebase — from UI/UX design to deployment.',
+      description: 'Offering end-to-end software development services for clients. Specializing in mobile and full-stack applications — from UI/UX design and database architecture to final deployment.',
       highlights: [
-        'Developed and deployed 6+ cross-platform mobile apps, including Aura (a wellness journaling app) and a custom Tailor Management System.',
-        'Designed clean, responsive interfaces and structured databases for clients.',
-        'Provided post-launch maintenance, updates, and direct customer support.',
+        'Developed and deployed 6+ custom software applications, including Aura (mood journal app) and a Tailor Management System.',
+        'Designed clean, responsive interfaces and structured database architectures (Firebase, local databases) for clients.',
+        'Provided end-to-end support, including system optimization, API integration, and post-launch maintenance.',
       ],
       tag: 'Available Now',
       isFreelance: true,
