@@ -5,7 +5,7 @@ Personal portfolio website built with React + Vite.
 ## Stack
 - React 18
 - Vite
-- Plain CSS (no framework)
+- Plain CSS 
 
 ## Run locally
 
