@@ -104,7 +104,7 @@ const DATA = {
   ],
 
   education: [
-    { degree: 'BSc Computer Science', school: 'Sukkur IBA University', detail: 'Currently enrolled — Year 2', period: 'Aug 2023 – Present' },
+    { degree: 'BSc Computer Science', school: 'Sukkur IBA University', detail: '', period: 'Aug 2023 – Present' },
     { degree: 'Intermediate (Pre-Engineering)', school: 'Shah Abdul Latif Degree College, Mirpurkhas', detail: '', period: '2018 – 2020' },
     { degree: 'Matriculation (Science)', school: 'The Stepping Stone High School', detail: '', period: '' },
   ],
