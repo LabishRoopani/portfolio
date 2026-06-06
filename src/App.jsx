@@ -359,23 +359,20 @@ function Projects() {
         <div className="modal-overlay" onClick={() => setActiveScreens(null)}>
           <button className="modal-close" onClick={() => setActiveScreens(null)}>×</button>
           
-          <div className="phone-modal-content" onClick={e => e.stopPropagation()}>
-            <div className="phone-mockup">
-              <div className="phone-notch">
-                <div className="phone-speaker" />
+          <div className="screenshot-modal-content" onClick={e => e.stopPropagation()}>
+            <div className="screenshot-wrapper">
+              <button className="screenshot-nav-btn prev" onClick={(e) => { e.stopPropagation(); setCurrentIndex(prev => (prev === 0 ? activeScreens.length - 1 : prev - 1)); }}>
+                ‹
+              </button>
+              <div className="screenshot-image-container">
+                <img src={activeScreens[currentIndex]} alt={`Screenshot ${currentIndex + 1}`} className="screenshot-image" />
               </div>
-              <div className="phone-screen">
-                <button className="phone-nav-btn prev" onClick={(e) => { e.stopPropagation(); setCurrentIndex(prev => (prev === 0 ? activeScreens.length - 1 : prev - 1)); }}>
-                  ‹
-                </button>
-                <img src={activeScreens[currentIndex]} alt={`Screenshot ${currentIndex + 1}`} className="phone-screenshot" />
-                <button className="phone-nav-btn next" onClick={(e) => { e.stopPropagation(); setCurrentIndex(prev => (prev === activeScreens.length - 1 ? 0 : prev + 1)); }}>
-                  ›
-                </button>
-              </div>
+              <button className="screenshot-nav-btn next" onClick={(e) => { e.stopPropagation(); setCurrentIndex(prev => (prev === activeScreens.length - 1 ? 0 : prev + 1)); }}>
+                ›
+              </button>
             </div>
             
-            <div className="phone-indicators">
+            <div className="screenshot-indicators">
               {activeScreens.map((_, idx) => (
                 <div key={idx} className={`indicator-dot${idx === currentIndex ? ' active' : ''}`} onClick={() => setCurrentIndex(idx)} />
               ))}
