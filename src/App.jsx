@@ -17,19 +17,33 @@ const DATA = {
 
   summary: 'Motivated Computer Science student at Sukkur IBA University with hands-on experience in AI-based systems, mobile app development, and automation tools. Proficient in Python, Flutter, and computer vision technologies, with growing expertise in React Native. Passionate about building intelligent solutions and pursuing a career in AI and Data Science.',
 
-  freelancing: {
-    title: 'Freelance Mobile App Developer',
-    since: '2024 – Present',
-    description: 'Offering end-to-end mobile application development services for clients. Specializing in cross-platform apps using Flutter and Firebase — from UI/UX design to deployment.',
-    services: [
-      'Cross-platform mobile apps with Flutter',
-      'Firebase backend — auth, real-time DB, push notifications',
-      'UI/UX design with clean, responsive interfaces',
-      'App deployment to Google Play Store',
-      'Maintenance, updates & client support',
-    ],
-    clients: '5+ projects delivered',
-  },
+  experience: [
+    {
+      role: 'Freelance Mobile App Developer',
+      company: 'Independent',
+      period: '2024 – Present',
+      description: 'Offering end-to-end mobile application development services for clients. Specializing in cross-platform apps using Flutter and Firebase — from UI/UX design to deployment.',
+      highlights: [
+        'Developed and deployed 5+ cross-platform mobile apps using Flutter and Firebase.',
+        'Designed clean, responsive interfaces and structured databases for clients.',
+        'Provided post-launch maintenance, updates, and direct customer support.',
+      ],
+      tag: 'Available Now',
+      isFreelance: true,
+      stats: { icon: '📱', label: 'Mobile Apps', value: '5+ Projects' },
+    },
+    {
+      role: 'Python Developer Intern',
+      company: 'CodeAlpha',
+      period: 'Jun 2024 – Jul 2024',
+      description: 'Worked on software automation and AI-based systems using Python during a remote internship.',
+      highlights: [
+        'Built an AI-powered system to manage Excel data using natural language.',
+        'Implemented automated scripts to improve workflow and data entry tasks.',
+        'Utilized libraries such as PyAutoGUI, OpenCV, and AI APIs for tool integration.',
+      ],
+    },
+  ],
 
   projects: [
     {
@@ -151,18 +165,9 @@ function useReveal() {
   }, [])
 }
 
-// Stylish Logo SVG for "Labish Roopani"
 function LogoMark() {
   return (
-    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="38" height="38" rx="8" fill="var(--accent-dark)"/>
-      <text x="50%" y="56%" dominantBaseline="middle" textAnchor="middle"
-        fontFamily="DM Serif Display, Georgia, serif"
-        fontSize="18" fontWeight="400" fill="#faf9f6" fontStyle="italic">
-        L
-      </text>
-      <circle cx="28" cy="10" r="3.5" fill="var(--paper)" opacity="0.9"/>
-    </svg>
+    <img src="/logo.png" alt="Labish Roopani Logo" className="logo-img" />
   )
 }
 
@@ -175,10 +180,10 @@ function Nav({ scrolled, dark, toggleDark }) {
         <span className="nav-logo-text">Labish Roopani</span>
       </a>
       <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-        {['about','projects','skills','freelance','education','contact'].map(s => (
+        {['about','projects','skills','experience','education','contact'].map(s => (
           <li key={s}>
             <a href={`#${s}`} onClick={() => setMenuOpen(false)}>
-              {s === 'freelance' ? 'Freelance' : s.charAt(0).toUpperCase() + s.slice(1)}
+              {s === 'experience' ? 'Experience' : s.charAt(0).toUpperCase() + s.slice(1)}
             </a>
           </li>
         ))}
@@ -322,48 +327,50 @@ function Skills() {
   )
 }
 
-function Freelance() {
-  const { freelancing: f } = DATA
+function Experience() {
   return (
-    <section className="section" id="freelance">
-      <SectionHeader num="04" label="Freelance" title="Mobile App Development" />
-      <div className="freelance-wrap reveal">
-        <div className="freelance-main">
-          <div className="freelance-header">
-            <div>
-              <h3 className="freelance-title">{f.title}</h3>
-              <p className="freelance-since">Independent · {f.since}</p>
+    <section className="section" id="experience">
+      <SectionHeader num="04" label="Experience" title="Work Experience" />
+      <div className="experience-list reveal">
+        {DATA.experience.map((exp, i) => (
+          <div className="exp-item" key={i}>
+            <div className="exp-meta">
+              <h3 className="exp-role">{exp.role}</h3>
+              <div className="exp-company-period">
+                <span className="exp-company">{exp.company}</span>
+                <span className="exp-period">{exp.period}</span>
+              </div>
+              {exp.tag && (
+                <span className="exp-badge">
+                  <span className="badge-dot badge-dot-blue" />
+                  {exp.tag}
+                </span>
+              )}
             </div>
-            <span className="freelance-badge">
-              <span className="badge-dot badge-dot-blue" />
-              Available Now
-            </span>
+            <div className="exp-content">
+              <p className="exp-desc">{exp.description}</p>
+              <ul className="exp-highlights">
+                {exp.highlights.map((h, idx) => (
+                  <li key={idx}>
+                    <span className="highlight-bullet">✓</span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+              {exp.isFreelance && exp.stats && (
+                <div className="exp-extra">
+                  <div className="freelance-stat-card-inline">
+                    <span className="stat-icon-inline">{exp.stats.icon}</span>
+                    <div>
+                      <h4 className="stat-title-inline">{exp.stats.label}</h4>
+                      <p className="stat-value-inline">{exp.stats.value}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-          <p className="freelance-desc">{f.description}</p>
-          <div className="freelance-services">
-            <p className="services-label">Services Offered</p>
-            <ul className="services-list">
-              {f.services.map((s, i) => (
-                <li key={i}>
-                  <span className="service-check">✓</span>
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="freelance-side">
-          <div className="freelance-stat-card">
-            <div className="stat-icon">📱</div>
-            <h4 className="stat-title">Mobile Apps</h4>
-            <p className="stat-value">{f.clients}</p>
-            <p className="stat-sub">Flutter + Firebase</p>
-          </div>
-          <div className="freelance-cta">
-            <p className="cta-text">Have a project in mind?</p>
-            <a href={`mailto:${DATA.email}`} className="btn btn-primary">Let's Work Together →</a>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )
@@ -521,7 +528,7 @@ export default function App() {
       <About />
       <Projects />
       <Skills />
-      <Freelance />
+      <Experience />
       <Education />
       <Contact />
       <Footer />
