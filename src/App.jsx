@@ -24,13 +24,13 @@ const DATA = {
       period: '2024 – Present',
       description: 'Offering end-to-end mobile application development services for clients. Specializing in cross-platform apps using Flutter and Firebase — from UI/UX design to deployment.',
       highlights: [
-        'Developed and deployed 5+ cross-platform mobile apps using Flutter and Firebase.',
+        'Developed and deployed 6+ cross-platform mobile apps, including Aura (a wellness journaling app) and a custom Tailor Management System.',
         'Designed clean, responsive interfaces and structured databases for clients.',
         'Provided post-launch maintenance, updates, and direct customer support.',
       ],
       tag: 'Available Now',
       isFreelance: true,
-      stats: { icon: '📱', label: 'Mobile Apps', value: '5+ Projects' },
+      stats: { icon: '📱', label: 'Mobile Apps', value: '6+ Projects' },
     },
   ],
 
@@ -134,6 +134,23 @@ const DATA = {
         '/hsp-2.png',
         '/hsp-3.png',
         '/hsp-4.png'
+      ]
+    },
+    {
+      num: '08',
+      name: 'Aura',
+      desc: 'Mental health and wellness mobile application designed to track and analyze daily mood patterns. Integrates interactive mood logging, daily streaks, customizable notes, and detailed visual analytics to provide mental well-being insights.',
+      tech: ['Flutter', 'Dart', 'Local DB', 'UI/UX'],
+      category: 'Mobile App',
+      color: '#fdfbf7',
+      darkColor: '#1e1c18',
+      emoji: '🌙',
+      screenshots: [
+        '/aura-1.png',
+        '/aura-2.png',
+        '/aura-3.png',
+        '/aura-4.png',
+        '/aura-5.png'
       ]
     },
   ],
