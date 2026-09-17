@@ -19,6 +19,19 @@ const DATA = {
 
   experience: [
     {
+      role: 'AI Development & Automation Intern',
+      company: 'iHunar Private Limited',
+      period: 'Jul 2026 – Aug 2026',
+      description: 'Gained practical experience in AI development, workflow automation, Python scripting, AI API integration, and prompt engineering.',
+      highlights: [
+        'Built automated AI workflows and integrated intelligent AI APIs into Python applications.',
+        'Applied prompt engineering techniques to optimize system responses and data processing.',
+        'Demonstrated strong commitment to technical execution, learning, and responsibility in assigned projects.',
+      ],
+      tag: 'Completed',
+      stats: { icon: '🤖', label: 'AI & Automation', value: '6-Week Internship' },
+    },
+    {
       role: 'Freelance Software Engineer',
       company: 'Independent',
       period: '2024 – Present',
@@ -171,6 +184,12 @@ const DATA = {
   ],
 
   certifications: [
+    {
+      name: 'AI Development & Automation Internship Certificate',
+      issuer: 'iHunar Private Limited',
+      date: 'Aug 2026',
+      image: '/cert-ihunar.png'
+    },
     {
       name: 'Mastering Deep Learning for Generative AI',
       issuer: 'Udemy',
